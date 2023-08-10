@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UseCases\Items\**" />
+    <EmbeddedResource Remove="UseCases\Items\**" />
+    <None Remove="UseCases\Items\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="UseCases\Items\Commands\CreateItem\CreateItemCommand.cs" />
+    <Compile Include="UseCases\Items\Commands\DeleteItem\DeleteItemommand.cs" />
+    <Compile Include="UseCases\Items\Commands\UpdateItem\UpdateItemCommand.cs" />
+    <Compile Include="UseCases\Items\Report\AddItemsFromExcel.cs" />
+    <Compile Include="UseCases\Items\Report\AddItemsFromPDF.cs" />
+    <Compile Include="UseCases\Items\Report\GetItemExcel.cs" />
+    <Compile Include="UseCases\Items\Report\GetitemPDF.cs" />
+    <Compile Include="UseCases\Items\Queries\GetAllItem\GetAllItemsQuery.cs" />
+    <Compile Include="UseCases\Items\Queries\GetItemById\GetItemByIdQuery.cs" />
+    <Compile Include="UseCases\Items\Queries\GetItemsPagination\GetItemsPaginationQuery.cs" />
+    <Compile Include="UseCases\Items\Response\ItemResponse.cs" />
+  </ItemGroup>
+  
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="ClosedXML" Version="0.102.0" />
+    <PackageReference Include="EPPlus" Version="6.2.7" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.6.23329.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0-preview.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.0.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.3.0-dev-00793" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.1-dev-00910" />
+    <PackageReference Include="Serilog.Sinks.Telegram" Version="0.2.1" />
+    <PackageReference Include="Spire.PDF" Version="9.7.14" />
+    <PackageReference Include="StackExchange.Redis" Version="2.6.122" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.0" />
+    <PackageReference Include="Telegram.Bot" Version="18.0.0" />
+    <PackageReference Include="X.PagedList" Version="8.4.7" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="ClosedXML" Version="0.102.0" />
+    <PackageReference Include="EPPlus" Version="6.2.7" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+   
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-preview.6.23329.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0-preview.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.0.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.3.0-dev-00793" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.1-dev-00910" />
+    <PackageReference Include="Serilog.Sinks.Telegram" Version="0.2.1" />
+    <PackageReference Include="Spire.PDF" Version="9.7.14" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.0" />
+    <PackageReference Include="Telegram.Bot" Version="18.0.0" />
+    <PackageReference Include="X.PagedList" Version="8.4.7" />
+    <PackageReference Include="X.PagedList.Mvc" Version="8.0.7" />
+  </ItemGroup>-->
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarketManager.Domain\MarketManager.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Orders\Commands\DeleteOrder\" />
+    <Folder Include="UseCases\Orders\Commands\UpdateOrder\" />
+    <Folder Include="UseCases\Orders\Queries\GetOrder\" />
+    <Folder Include="UseCases\Orders\Queries\GetAllOrders\" />
+  </ItemGroup>
+
+</Project>
+
+
